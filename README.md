@@ -8,7 +8,7 @@ Installation
 
 This plugin is compatible with Redmine 2.1.0+.
 
-Please apply general instructions for plugins [here](http://www.redmine.org/wiki/redmine/Plugins).
+Please apply general instructions for plugins [here](https://www.redmine.org/projects/redmine/wiki/Plugins).
 
 First download the source or clone the plugin and put it in the "plugins/" directory of your redmine instance. Note that this is crucial that the directory is named redmine_base_deface !
 
@@ -24,12 +24,12 @@ Test status
 
 |Plugin branch| Redmine Version | Test Status       |
 |-------------|-----------------|-------------------|
-|master       | 5.0.6           | [![5.0.6][1]][5]  |  
-|master       | 4.2.11          | [![4.2.11][2]][5] |
+|master       | 6.0.5           | [![6.0.5][1]][5]  |
+|master       | 5.1.8           | [![5.1.8][2]][5]  |
 |master       | master          | [![master][4]][5] |
 
-[1]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/5_0_6.yml/badge.svg
-[2]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/4_2_11.yml/badge.svg
+[1]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/6_0_5.yml/badge.svg
+[2]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/5_1_8.yml/badge.svg
 [4]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/master.yml/badge.svg
 [5]: https://github.com/jbbarth/redmine_base_deface/actions
 
