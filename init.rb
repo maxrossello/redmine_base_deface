@@ -5,13 +5,10 @@ Redmine::Plugin.register :redmine_base_deface do
   version '6.1.0'
   url 'https://github.com/maxrossello/redmine_base_deface'
   author_url 'jeanbaptiste.barth@gmail.com'
-  # doesn't work since redmine evaluates dependencies as it loads, and loads in lexical order
-  # TODO: see if it works in Redmine 2.6.x or 3.x when they're released
-  # requires_redmine_plugin :redmine_base_rspec, :version_or_higher => '0.0.3' if Rails.env.test?
 end
 
 # Select the autoloader to use: zeitwerk or the classic one
-# The `zeitwerk_enabled?` predicate returns `true` for Rails >= 7
+# The `zeitwerk_enabled?` predicate returns `true` for Rails >= 7 
 # For Rails 6.x, it returns `Rails.configuration.autoloader == :zeitwerk`
 if Rails::VERSION::MAJOR >= 7
   Dir.glob("#{Rails.root}/plugins/*/app/overrides/**/*.rb").each do |path|
