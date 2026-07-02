@@ -24,13 +24,13 @@ Test status
 
 |Plugin branch| Redmine Version | Test Status       |
 |-------------|-----------------|-------------------|
-|master       | 6.0.5           | [![6.0.5][1]][5]  |
-|master       | 5.1.8           | [![5.1.8][2]][5]  |
-|master       | master          | [![master][4]][5] |
+|master       | 6.1.3           | [![6.1.3][2]][5]  |
+|master       | 7.0.0           | [![7.0.0][1]][5]  |
+|master       | master          | [![master][3]][5] |
 
-[1]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/6_0_5.yml/badge.svg
-[2]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/5_1_8.yml/badge.svg
-[4]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/master.yml/badge.svg
+[1]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/7_0_0.yml/badge.svg
+[2]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/6_1_3.yml/badge.svg
+[3]: https://github.com/jbbarth/redmine_base_deface/actions/workflows/master.yml/badge.svg
 [5]: https://github.com/jbbarth/redmine_base_deface/actions
 
 Contributing
