@@ -2,39 +2,25 @@ Redmine::Plugin.register :redmine_base_deface do
   name 'Redmine Base Deface plugin'
   author 'Jean-Baptiste BARTH'
   description 'This is a plugin for Redmine'
-  version '7.0.0'
+  version '7.0.3'
   url 'https://github.com/maxrossello/redmine_base_deface'
   author_url 'jeanbaptiste.barth@gmail.com'
 end
 
-# Select the autoloader to use: zeitwerk or the classic one
-# The `zeitwerk_enabled?` predicate returns `true` for Rails >= 7 
-# For Rails 6.x, it returns `Rails.configuration.autoloader == :zeitwerk`
-if Rails::VERSION::MAJOR >= 7
-  Dir.glob("#{Rails.root}/plugins/*/app/overrides/**/*.rb").each do |path|
-    Rails.autoloaders.main.ignore(path)
-    load File.expand_path(path, __FILE__)
-  end
+require_relative "lib/redmine_base_deface/overrides_loader"
 
-  Dir.glob("#{Rails.root}/plugins/*/app/overrides/**/*.deface").each do |path|
-    Deface::DSL::Loader::load File.expand_path(path, __FILE__)
-  end
+if Rails::VERSION::MAJOR >= 7
+  RedmineBaseDeface::OverridesLoader.ignore_ruby_overrides
+  RedmineBaseDeface::OverridesLoader.load_all
 
   Rails.application.config.after_initialize do
     require_relative "lib/applicator_patch"
   end
-elsif Rails::VERSION::MAJOR == 6 && Rails.autoloaders.zeitwerk_enabled?
-  Dir.glob("#{Rails.root}/plugins/*/app/overrides/**/*.rb").each do |path|
-    Rails.autoloaders.main.ignore(path)
-  end
+elsif Rails::VERSION::MAJOR == 6
+  RedmineBaseDeface::OverridesLoader.ignore_ruby_overrides
 
   Rails.application.config.after_initialize do
-    Dir.glob("#{Rails.root}/plugins/*/app/overrides/**/*.rb").each do |path|
-      load File.expand_path(path, __FILE__)
-    end
-    Dir.glob("#{Rails.root}/plugins/*/app/overrides/**/*.deface").each do |path|
-      Deface::DSL::Loader::load File.expand_path(path, __FILE__)
-    end
+    RedmineBaseDeface::OverridesLoader.load_all
     require_relative "lib/applicator_patch"
   end
 else

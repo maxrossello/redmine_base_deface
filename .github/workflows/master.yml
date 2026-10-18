@@ -55,6 +55,7 @@ jobs:
           libpq-dev
           ghostscript
           gsfonts
+          subversion
 
       - name: Set up chromedriver
         uses: nanasess/setup-chromedriver@master
@@ -131,6 +132,7 @@ jobs:
       - name: Run core tests
         env:
           RAILS_ENV: test
+          RUBYOPT: "-W0"
         working-directory: redmine
         run: bundle exec rails test
 
