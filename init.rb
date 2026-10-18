@@ -2,7 +2,7 @@ Redmine::Plugin.register :redmine_base_deface do
   name 'Redmine Base Deface plugin'
   author 'Jean-Baptiste BARTH'
   description 'This is a plugin for Redmine'
-  version '6.1.5'
+  version '6.1.6'
   url 'https://github.com/maxrossello/redmine_base_deface'
   author_url 'jeanbaptiste.barth@gmail.com'
 end
